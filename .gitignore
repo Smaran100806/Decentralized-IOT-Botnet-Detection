@@ -32,28 +32,20 @@ htmlcov/
 .conda/
 .env
 .venv
-env/
-venv/
 ENV/
 *.secret
 *.key
 
 #  Data & Large Files 
 CICIOT23/
-
-# Ignore data contents but whitelist small metadata for team consistency
-processed_ciciot23/*
-!processed_ciciot23/*.json
-!processed_ciciot23/*.pkl
-!processed_ciciot23/*.joblib
-
-graph_artifacts/*
-!graph_artifacts/*.json
-!graph_artifacts/*.pkl
-
-# Ignore large CSVs if they exist elsewhere
 *.csv
 
+# Whitelist small metadata in processed data
+processed_ciciot23/*
+!processed_ciciot23/*.json
+!processed_ciciot23/*.txt
+!processed_ciciot23/*.pkl
+!processed_ciciot23/*.joblib
 
 # Models & Heavy Artifacts 
 *.h5
@@ -61,13 +53,25 @@ graph_artifacts/*
 *.onnx
 *.pb
 *.tflite
-models/
 
+scripts/
+
+models/*
+!models/*.json
+!models/*.txt
+
+matrix_artifacts/*
+!matrix_artifacts/*.json
+!matrix_artifacts/*.md
+
+federated_artifacts/*
+!federated_artifacts/*.json
+!federated_artifacts/*.md
+
+graph_artifacts/*
+!graph_artifacts/*.json
+!graph_artifacts/*.md
+!graph_artifacts/*.pkl
 
 #  Reports & Documentation 
-*.html
-
-
-# Temporary Utility Scripts
-fix_notebook.py
-patch_notebook.py
+# (Intentionally tracking all files in reports/ and notebooks/)

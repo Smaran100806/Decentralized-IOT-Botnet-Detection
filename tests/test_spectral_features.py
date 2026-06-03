@@ -18,7 +18,7 @@ import pytest
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from spectral_features import (
+from src.graph.spectral_features import (
     build_adjacency_matrix,
     build_normalized_laplacian,
     build_unnormalized_laplacian,

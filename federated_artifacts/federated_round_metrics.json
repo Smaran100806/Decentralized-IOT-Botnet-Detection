@@ -1,0 +1,16 @@
+[
+  {
+    "round": 1,
+    "global_accuracy": 0.9882,
+    "global_f1": 0.9939,
+    "n_clients": 2,
+    "total_samples": 3334411
+  },
+  {
+    "round": 2,
+    "global_accuracy": 0.9979,
+    "global_f1": 0.9989,
+    "n_clients": 2,
+    "total_samples": 3334411
+  }
+]

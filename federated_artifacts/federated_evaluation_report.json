@@ -1,0 +1,21 @@
+{
+  "model_path": "C:\\Users\\Suhas Raghavendra\\Desktop\\Main EL\\federated_artifacts\\global_model_final.pkl",
+  "n_trees": 100,
+  "n_features": 17,
+  "test_samples": 1176851,
+  "accuracy": 0.9930832365354663,
+  "f1": 0.9964583442106546,
+  "macro_f1": 0.9246864739737093,
+  "roc_auc": 0.9982986003253153,
+  "pr_auc": 0.9999569770650629,
+  "confusion_matrix": [
+    [
+      23601,
+      4108
+    ],
+    [
+      4032,
+      1145110
+    ]
+  ]
+}

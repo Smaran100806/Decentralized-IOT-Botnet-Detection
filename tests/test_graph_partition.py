@@ -16,12 +16,12 @@ import pytest
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from graph_partition import (
+from src.graph.graph_partition import (
     partition_spectral,
     compute_partition_summary,
     load_graph,
 )
-from spectral_features import build_adjacency_matrix
+from src.graph.spectral_features import build_adjacency_matrix
 
 
 # -- Helpers --------------------------------------------------------------------

@@ -6,3 +6,4 @@ scipy==1.15.3
 imbalanced-learn==0.12.3
 ydata-profiling>=4.6.0
 pytest==7.4.4
+flwr>=1.5.0

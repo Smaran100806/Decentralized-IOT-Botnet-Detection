@@ -26,7 +26,7 @@ import pytest
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from graph_builder import (
+from src.graph.graph_builder import (
     assign_device_nodes,
     assign_windows,
     build_graph,

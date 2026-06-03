@@ -22,7 +22,7 @@ from sklearn.linear_model import LogisticRegression
 # ── Make project root importable ─────────────────────────────────────────────
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils_hyperopt import get_param_grids, run_hyperopt
+from src.models.utils_hyperopt import get_param_grids, run_hyperopt
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -158,20 +158,20 @@ class TestBinaryEvaluate:
     """Tests for train_binary_baseline.evaluate()."""
 
     def test_returns_dict(self, fitted_binary_rf):
-        from train_binary_baseline import evaluate
+        from src.models.train_binary_baseline import evaluate
         model, X_val, y_val = fitted_binary_rf
         result = evaluate("RF", model, X_val, y_val)
         assert isinstance(result, dict)
 
     def test_has_required_keys(self, fitted_binary_rf):
-        from train_binary_baseline import evaluate
+        from src.models.train_binary_baseline import evaluate
         model, X_val, y_val = fitted_binary_rf
         result = evaluate("RF", model, X_val, y_val)
         for key in ("model", "accuracy", "precision", "recall", "f1"):
             assert key in result, f"Missing key: {key}"
 
     def test_metrics_in_valid_range(self, fitted_binary_rf):
-        from train_binary_baseline import evaluate
+        from src.models.train_binary_baseline import evaluate
         model, X_val, y_val = fitted_binary_rf
         result = evaluate("RF", model, X_val, y_val)
         for metric in ("accuracy", "precision", "recall", "f1"):
@@ -180,13 +180,13 @@ class TestBinaryEvaluate:
             )
 
     def test_model_name_stored_correctly(self, fitted_binary_rf):
-        from train_binary_baseline import evaluate
+        from src.models.train_binary_baseline import evaluate
         model, X_val, y_val = fitted_binary_rf
         result = evaluate("MY_MODEL", model, X_val, y_val)
         assert result["model"] == "MY_MODEL"
 
     def test_predictions_match_label_set(self, fitted_binary_rf):
-        from train_binary_baseline import evaluate
+        from src.models.train_binary_baseline import evaluate
         model, X_val, y_val = fitted_binary_rf
         evaluate("RF", model, X_val, y_val)   # should not raise
         preds = model.predict(X_val)
@@ -214,20 +214,20 @@ class TestFamilyEvaluate:
     """Tests for train_family_baseline.evaluate()."""
 
     def test_returns_dict(self, fitted_family_rf):
-        from train_family_baseline import evaluate
+        from src.models.train_family_baseline import evaluate
         model, X_val, y_val, names = fitted_family_rf
         result = evaluate("RF", model, X_val, y_val, names)
         assert isinstance(result, dict)
 
     def test_has_required_keys(self, fitted_family_rf):
-        from train_family_baseline import evaluate
+        from src.models.train_family_baseline import evaluate
         model, X_val, y_val, names = fitted_family_rf
         result = evaluate("RF", model, X_val, y_val, names)
         for key in ("model", "accuracy", "macro_f1", "weighted_f1"):
             assert key in result, f"Missing key: {key}"
 
     def test_metrics_in_valid_range(self, fitted_family_rf):
-        from train_family_baseline import evaluate
+        from src.models.train_family_baseline import evaluate
         model, X_val, y_val, names = fitted_family_rf
         result = evaluate("RF", model, X_val, y_val, names)
         for metric in ("accuracy", "macro_f1", "weighted_f1"):
@@ -236,14 +236,14 @@ class TestFamilyEvaluate:
             )
 
     def test_model_name_stored_correctly(self, fitted_family_rf):
-        from train_family_baseline import evaluate
+        from src.models.train_family_baseline import evaluate
         model, X_val, y_val, names = fitted_family_rf
         result = evaluate("LGBM", model, X_val, y_val, names)
         assert result["model"] == "LGBM"
 
     def test_macro_f1_leq_weighted_f1_on_balanced(self, fitted_family_rf):
         """On reasonably balanced data macro and weighted F1 should be close."""
-        from train_family_baseline import evaluate
+        from src.models.train_family_baseline import evaluate
         model, X_val, y_val, names = fitted_family_rf
         result = evaluate("RF", model, X_val, y_val, names)
         # They should be within 0.3 of each other on synthetic balanced data
