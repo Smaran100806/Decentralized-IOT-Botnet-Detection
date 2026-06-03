@@ -55,16 +55,19 @@ graph_artifacts/*
 *.csv
 
 
-#  Models & Heavy Artifacts 
+# Models & Heavy Artifacts 
 *.h5
 *.pth
 *.onnx
 *.pb
 *.tflite
+models/
 
 
 #  Reports & Documentation 
 *.html
 
 
-
+# Temporary Utility Scripts
+fix_notebook.py
+patch_notebook.py
