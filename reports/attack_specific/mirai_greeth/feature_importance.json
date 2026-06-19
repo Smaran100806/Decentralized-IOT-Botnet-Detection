@@ -1,0 +1,90 @@
+[
+  {
+    "feature": "Protocol Type",
+    "importance": 1298
+  },
+  {
+    "feature": "Duration",
+    "importance": 1091
+  },
+  {
+    "feature": "Rate",
+    "importance": 1074
+  },
+  {
+    "feature": "flow_duration",
+    "importance": 917
+  },
+  {
+    "feature": "Header_Length",
+    "importance": 882
+  },
+  {
+    "feature": "Variance",
+    "importance": 879
+  },
+  {
+    "feature": "Max",
+    "importance": 807
+  },
+  {
+    "feature": "Tot size",
+    "importance": 779
+  },
+  {
+    "feature": "Covariance",
+    "importance": 762
+  },
+  {
+    "feature": "Min",
+    "importance": 742
+  },
+  {
+    "feature": "urg_count",
+    "importance": 660
+  },
+  {
+    "feature": "syn_count",
+    "importance": 649
+  },
+  {
+    "feature": "rst_count",
+    "importance": 595
+  },
+  {
+    "feature": "Tot sum",
+    "importance": 531
+  },
+  {
+    "feature": "AVG",
+    "importance": 455
+  },
+  {
+    "feature": "Number",
+    "importance": 132
+  },
+  {
+    "feature": "UDP",
+    "importance": 53
+  },
+  {
+    "feature": "HTTPS",
+    "importance": 42
+  },
+  {
+    "feature": "TCP",
+    "importance": 21
+  },
+  {
+    "feature": "ack_flag_number",
+    "importance": 19
+  },
+  {
+    "feature": "ICMP",
+    "importance": 8
+  },
+  {
+    "feature": "syn_flag_number",
+    "importance": 4
+  }
+]

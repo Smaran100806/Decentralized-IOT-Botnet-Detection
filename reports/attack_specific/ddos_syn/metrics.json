@@ -1,0 +1,299 @@
+{
+  "attack": "ddos_syn",
+  "attack_display": "DDoS-SYN Flood",
+  "best_model": "rf",
+  "features": [
+    "Header_Length",
+    "Duration",
+    "syn_flag_number",
+    "ack_flag_number",
+    "syn_count",
+    "urg_count",
+    "rst_count",
+    "HTTPS",
+    "UDP",
+    "ICMP",
+    "Tot sum",
+    "Min",
+    "Max",
+    "AVG",
+    "Tot size",
+    "Covariance",
+    "Variance",
+    "TCP",
+    "Rate",
+    "flow_duration",
+    "fin_flag_number",
+    "psh_flag_number",
+    "Number"
+  ],
+  "extra_features": [
+    "TCP",
+    "Rate",
+    "flow_duration",
+    "fin_flag_number",
+    "psh_flag_number",
+    "Number"
+  ],
+  "rows": {
+    "train_total": 5491971,
+    "train_attack": 716226,
+    "train_benign": 4775745,
+    "validation": 1176851,
+    "test": 1176851
+  },
+  "results": [
+    {
+      "model": "lr",
+      "accuracy": 0.926654266342978,
+      "precision": 0.6428105571648794,
+      "recall": 0.9871487197497383,
+      "f1": 0.778607941356766,
+      "roc_auc": 0.978504783870714,
+      "train_time_s": 22.2
+    },
+    {
+      "model": "rf",
+      "accuracy": 0.9772630519921384,
+      "precision": 0.8542230304517842,
+      "recall": 0.9959351972892644,
+      "f1": 0.9196519190693819,
+      "roc_auc": 0.9924947204380721,
+      "train_time_s": 190.69
+    },
+    {
+      "model": "xgb",
+      "accuracy": 0.9760190542388119,
+      "precision": 0.846429379591251,
+      "recall": 0.9974180373181407,
+      "f1": 0.9157416419363121,
+      "roc_auc": 0.9929106180840125,
+      "train_time_s": 25.18
+    },
+    {
+      "model": "lgbm",
+      "accuracy": 0.9767124300357479,
+      "precision": 0.8501809756611293,
+      "recall": 0.9975481110048843,
+      "f1": 0.9179878504952569,
+      "roc_auc": 0.9931620303963508,
+      "train_time_s": 30.64
+    }
+  ],
+  "best": {
+    "model": "rf",
+    "accuracy": 0.9772630519921384,
+    "precision": 0.8542230304517842,
+    "recall": 0.9959351972892644,
+    "f1": 0.9196519190693819,
+    "roc_auc": 0.9924947204380721,
+    "train_time_s": 190.69
+  },
+  "confusion_matrix": [
+    [
+      996959,
+      26133
+    ],
+    [
+      625,
+      153134
+    ]
+  ],
+  "classification_report": {
+    "Benign": {
+      "precision": 0.9993734863430047,
+      "recall": 0.9744568425908912,
+      "f1-score": 0.9867578968622381,
+      "support": 1023092.0
+    },
+    "Attack": {
+      "precision": 0.8542230304517842,
+      "recall": 0.9959351972892644,
+      "f1-score": 0.9196519190693819,
+      "support": 153759.0
+    },
+    "accuracy": 0.9772630519921384,
+    "macro avg": {
+      "precision": 0.9267982583973944,
+      "recall": 0.9851960199400778,
+      "f1-score": 0.95320490796581,
+      "support": 1176851.0
+    },
+    "weighted avg": {
+      "precision": 0.9804091578533505,
+      "recall": 0.9772630519921384,
+      "f1-score": 0.9779903060291999,
+      "support": 1176851.0
+    }
+  },
+  "feature_importance": {
+    "lr": [
+      {
+        "feature": "syn_flag_number",
+        "importance": 3.236042
+      },
+      {
+        "feature": "urg_count",
+        "importance": 3.07411
+      },
+      {
+        "feature": "psh_flag_number",
+        "importance": 2.324507
+      },
+      {
+        "feature": "ICMP",
+        "importance": 1.483052
+      },
+      {
+        "feature": "TCP",
+        "importance": 1.332159
+      },
+      {
+        "feature": "syn_count",
+        "importance": 1.265863
+      },
+      {
+        "feature": "fin_flag_number",
+        "importance": 1.096115
+      },
+      {
+        "feature": "Tot sum",
+        "importance": 0.99247
+      },
+      {
+        "feature": "AVG",
+        "importance": 0.705375
+      },
+      {
+        "feature": "rst_count",
+        "importance": 0.647026
+      }
+    ],
+    "rf": [
+      {
+        "feature": "syn_flag_number",
+        "importance": 0.322121
+      },
+      {
+        "feature": "syn_count",
+        "importance": 0.318415
+      },
+      {
+        "feature": "TCP",
+        "importance": 0.054948
+      },
+      {
+        "feature": "Tot sum",
+        "importance": 0.037091
+      },
+      {
+        "feature": "Min",
+        "importance": 0.029367
+      },
+      {
+        "feature": "Tot size",
+        "importance": 0.027497
+      },
+      {
+        "feature": "flow_duration",
+        "importance": 0.027183
+      },
+      {
+        "feature": "Header_Length",
+        "importance": 0.025069
+      },
+      {
+        "feature": "urg_count",
+        "importance": 0.024571
+      },
+      {
+        "feature": "Rate",
+        "importance": 0.023169
+      }
+    ],
+    "xgb": [
+      {
+        "feature": "syn_flag_number",
+        "importance": 0.953176
+      },
+      {
+        "feature": "syn_count",
+        "importance": 0.014327
+      },
+      {
+        "feature": "rst_count",
+        "importance": 0.013092
+      },
+      {
+        "feature": "flow_duration",
+        "importance": 0.005008
+      },
+      {
+        "feature": "urg_count",
+        "importance": 0.003879
+      },
+      {
+        "feature": "Number",
+        "importance": 0.001777
+      },
+      {
+        "feature": "ack_flag_number",
+        "importance": 0.001507
+      },
+      {
+        "feature": "Rate",
+        "importance": 0.001497
+      },
+      {
+        "feature": "AVG",
+        "importance": 0.000966
+      },
+      {
+        "feature": "Header_Length",
+        "importance": 0.000553
+      }
+    ],
+    "lgbm": [
+      {
+        "feature": "Rate",
+        "importance": 2097
+      },
+      {
+        "feature": "syn_count",
+        "importance": 1475
+      },
+      {
+        "feature": "flow_duration",
+        "importance": 1377
+      },
+      {
+        "feature": "Header_Length",
+        "importance": 1026
+      },
+      {
+        "feature": "rst_count",
+        "importance": 988
+      },
+      {
+        "feature": "Duration",
+        "importance": 836
+      },
+      {
+        "feature": "Tot size",
+        "importance": 606
+      },
+      {
+        "feature": "Variance",
+        "importance": 582
+      },
+      {
+        "feature": "urg_count",
+        "importance": 581
+      },
+      {
+        "feature": "Min",
+        "importance": 529
+      }
+    ]
+  }
+}

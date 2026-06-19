@@ -1,6 +1,5 @@
 # Secure Aggregation — Task E4
 
-> **Team Member 3** | Section E of the implementation plan.
 
 ## Overview
 

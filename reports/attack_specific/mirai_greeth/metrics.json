@@ -1,0 +1,297 @@
+{
+  "attack": "mirai_greeth",
+  "attack_display": "Mirai-Greeth_flood",
+  "best_model": "lgbm",
+  "features": [
+    "Header_Length",
+    "Duration",
+    "syn_flag_number",
+    "ack_flag_number",
+    "syn_count",
+    "urg_count",
+    "rst_count",
+    "HTTPS",
+    "UDP",
+    "ICMP",
+    "Tot sum",
+    "Min",
+    "Max",
+    "AVG",
+    "Tot size",
+    "Covariance",
+    "Variance",
+    "Protocol Type",
+    "Rate",
+    "flow_duration",
+    "Number",
+    "TCP"
+  ],
+  "extra_features": [
+    "Protocol Type",
+    "Rate",
+    "flow_duration",
+    "Number",
+    "TCP"
+  ],
+  "rows": {
+    "train_total": 5491971,
+    "train_attack": 116133,
+    "train_benign": 5375838,
+    "validation": 1176851,
+    "test": 1176851
+  },
+  "results": [
+    {
+      "model": "lr",
+      "accuracy": 0.9837498544845524,
+      "precision": 0.5660683292226181,
+      "recall": 0.9950622240064231,
+      "f1": 0.7216221724067658,
+      "roc_auc": 0.9924069056068897,
+      "train_time_s": 14.12
+    },
+    {
+      "model": "rf",
+      "accuracy": 0.9988350266941185,
+      "precision": 0.9521339940839768,
+      "recall": 0.9949819349658772,
+      "f1": 0.9730865118470388,
+      "roc_auc": 0.9999596867037988,
+      "train_time_s": 124.13
+    },
+    {
+      "model": "xgb",
+      "accuracy": 0.9977252855289243,
+      "precision": 0.9036932127682754,
+      "recall": 0.9989963869931754,
+      "f1": 0.9489579956908879,
+      "roc_auc": 0.9999720333616893,
+      "train_time_s": 27.98
+    },
+    {
+      "model": "lgbm",
+      "accuracy": 0.9989284964706662,
+      "precision": 0.9557174239796509,
+      "recall": 0.995503813729426,
+      "f1": 0.9752049865308611,
+      "roc_auc": 0.9999766447988834,
+      "train_time_s": 31.4
+    }
+  ],
+  "best": {
+    "model": "lgbm",
+    "accuracy": 0.9989284964706662,
+    "precision": 0.9557174239796509,
+    "recall": 0.995503813729426,
+    "f1": 0.9752049865308611,
+    "roc_auc": 0.9999766447988834,
+    "train_time_s": 31.4
+  },
+  "confusion_matrix": [
+    [
+      1150792,
+      1149
+    ],
+    [
+      112,
+      24798
+    ]
+  ],
+  "classification_report": {
+    "Benign": {
+      "precision": 0.9999026851935522,
+      "recall": 0.9990025530821457,
+      "f1-score": 0.9994524164674565,
+      "support": 1151941.0
+    },
+    "Attack": {
+      "precision": 0.9557174239796509,
+      "recall": 0.995503813729426,
+      "f1-score": 0.9752049865308611,
+      "support": 24910.0
+    },
+    "accuracy": 0.9989284964706662,
+    "macro avg": {
+      "precision": 0.9778100545866015,
+      "recall": 0.9972531834057858,
+      "f1-score": 0.9873287014991587,
+      "support": 1176851.0
+    },
+    "weighted avg": {
+      "precision": 0.9989674309796897,
+      "recall": 0.9989284964706662,
+      "f1-score": 0.9989391794648789,
+      "support": 1176851.0
+    }
+  },
+  "feature_importance": {
+    "lr": [
+      {
+        "feature": "Protocol Type",
+        "importance": 2.579953
+      },
+      {
+        "feature": "urg_count",
+        "importance": 1.187584
+      },
+      {
+        "feature": "Variance",
+        "importance": 1.103587
+      },
+      {
+        "feature": "AVG",
+        "importance": 0.715131
+      },
+      {
+        "feature": "ack_flag_number",
+        "importance": 0.699537
+      },
+      {
+        "feature": "Min",
+        "importance": 0.533591
+      },
+      {
+        "feature": "syn_flag_number",
+        "importance": 0.523086
+      },
+      {
+        "feature": "ICMP",
+        "importance": 0.370109
+      },
+      {
+        "feature": "flow_duration",
+        "importance": 0.19883
+      },
+      {
+        "feature": "syn_count",
+        "importance": 0.185645
+      }
+    ],
+    "rf": [
+      {
+        "feature": "Protocol Type",
+        "importance": 0.209542
+      },
+      {
+        "feature": "Min",
+        "importance": 0.176736
+      },
+      {
+        "feature": "Max",
+        "importance": 0.155923
+      },
+      {
+        "feature": "AVG",
+        "importance": 0.148102
+      },
+      {
+        "feature": "Tot size",
+        "importance": 0.123254
+      },
+      {
+        "feature": "Tot sum",
+        "importance": 0.064878
+      },
+      {
+        "feature": "TCP",
+        "importance": 0.035197
+      },
+      {
+        "feature": "Covariance",
+        "importance": 0.017222
+      },
+      {
+        "feature": "UDP",
+        "importance": 0.015059
+      },
+      {
+        "feature": "Header_Length",
+        "importance": 0.014151
+      }
+    ],
+    "xgb": [
+      {
+        "feature": "Protocol Type",
+        "importance": 0.900505
+      },
+      {
+        "feature": "Variance",
+        "importance": 0.029802
+      },
+      {
+        "feature": "Max",
+        "importance": 0.020149
+      },
+      {
+        "feature": "Number",
+        "importance": 0.008304
+      },
+      {
+        "feature": "Tot size",
+        "importance": 0.005912
+      },
+      {
+        "feature": "Min",
+        "importance": 0.005072
+      },
+      {
+        "feature": "Tot sum",
+        "importance": 0.003928
+      },
+      {
+        "feature": "HTTPS",
+        "importance": 0.003867
+      },
+      {
+        "feature": "Covariance",
+        "importance": 0.002939
+      },
+      {
+        "feature": "rst_count",
+        "importance": 0.002617
+      }
+    ],
+    "lgbm": [
+      {
+        "feature": "Protocol Type",
+        "importance": 1298
+      },
+      {
+        "feature": "Duration",
+        "importance": 1091
+      },
+      {
+        "feature": "Rate",
+        "importance": 1074
+      },
+      {
+        "feature": "flow_duration",
+        "importance": 917
+      },
+      {
+        "feature": "Header_Length",
+        "importance": 882
+      },
+      {
+        "feature": "Variance",
+        "importance": 879
+      },
+      {
+        "feature": "Max",
+        "importance": 807
+      },
+      {
+        "feature": "Tot size",
+        "importance": 779
+      },
+      {
+        "feature": "Covariance",
+        "importance": 762
+      },
+      {
+        "feature": "Min",
+        "importance": 742
+      }
+    ]
+  }
+}

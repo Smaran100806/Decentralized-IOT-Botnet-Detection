@@ -1,0 +1,297 @@
+{
+  "attack": "ddos_icmp",
+  "attack_display": "DDoS-ICMP Flood",
+  "best_model": "rf",
+  "features": [
+    "Header_Length",
+    "Duration",
+    "syn_flag_number",
+    "ack_flag_number",
+    "syn_count",
+    "urg_count",
+    "rst_count",
+    "HTTPS",
+    "UDP",
+    "ICMP",
+    "Tot sum",
+    "Min",
+    "Max",
+    "AVG",
+    "Tot size",
+    "Covariance",
+    "Variance",
+    "Protocol Type",
+    "Rate",
+    "flow_duration",
+    "Number",
+    "TCP"
+  ],
+  "extra_features": [
+    "Protocol Type",
+    "Rate",
+    "flow_duration",
+    "Number",
+    "TCP"
+  ],
+  "rows": {
+    "train_total": 5491971,
+    "train_attack": 848088,
+    "train_benign": 4643883,
+    "validation": 1176851,
+    "test": 1176851
+  },
+  "results": [
+    {
+      "model": "lr",
+      "accuracy": 0.9994077415067838,
+      "precision": 0.9973447734828452,
+      "recall": 0.9988297410596063,
+      "f1": 0.998086704932568,
+      "roc_auc": 0.9996256947669314,
+      "train_time_s": 10.77
+    },
+    {
+      "model": "rf",
+      "accuracy": 0.9998402516546274,
+      "precision": 0.9999945002062423,
+      "recall": 0.9989725895687623,
+      "f1": 0.9994832836772611,
+      "roc_auc": 0.9999936720275993,
+      "train_time_s": 158.5
+    },
+    {
+      "model": "xgb",
+      "accuracy": 0.9997901178653882,
+      "precision": 0.9994229944937189,
+      "recall": 0.9992198273730709,
+      "f1": 0.9993214006071679,
+      "roc_auc": 0.9999992724157871,
+      "train_time_s": 23.14
+    },
+    {
+      "model": "lgbm",
+      "accuracy": 0.9623928602686321,
+      "precision": 0.815549192532356,
+      "recall": 0.9780397888039734,
+      "f1": 0.8894340546509246,
+      "roc_auc": 0.9688566785069284,
+      "train_time_s": 32.77
+    }
+  ],
+  "best": {
+    "model": "rf",
+    "accuracy": 0.9998402516546274,
+    "precision": 0.9999945002062423,
+    "recall": 0.9989725895687623,
+    "f1": 0.9994832836772611,
+    "roc_auc": 0.9999936720275993,
+    "train_time_s": 158.5
+  },
+  "confusion_matrix": [
+    [
+      994839,
+      1
+    ],
+    [
+      187,
+      181824
+    ]
+  ],
+  "classification_report": {
+    "Benign": {
+      "precision": 0.9998120652123663,
+      "recall": 0.9999989948132363,
+      "f1-score": 0.999905521276307,
+      "support": 994840.0
+    },
+    "Attack": {
+      "precision": 0.9999945002062423,
+      "recall": 0.9989725895687623,
+      "f1-score": 0.9994832836772611,
+      "support": 182011.0
+    },
+    "accuracy": 0.9998402516546274,
+    "macro avg": {
+      "precision": 0.9999032827093043,
+      "recall": 0.9994857921909993,
+      "f1-score": 0.9996944024767841,
+      "support": 1176851.0
+    },
+    "weighted avg": {
+      "precision": 0.9998402804882767,
+      "recall": 0.9998402516546274,
+      "f1-score": 0.9998402182875346,
+      "support": 1176851.0
+    }
+  },
+  "feature_importance": {
+    "lr": [
+      {
+        "feature": "ICMP",
+        "importance": 3.999252
+      },
+      {
+        "feature": "TCP",
+        "importance": 2.929044
+      },
+      {
+        "feature": "Tot sum",
+        "importance": 1.353956
+      },
+      {
+        "feature": "Tot size",
+        "importance": 1.235986
+      },
+      {
+        "feature": "AVG",
+        "importance": 1.138785
+      },
+      {
+        "feature": "ack_flag_number",
+        "importance": 1.138444
+      },
+      {
+        "feature": "Protocol Type",
+        "importance": 1.013641
+      },
+      {
+        "feature": "syn_flag_number",
+        "importance": 0.947266
+      },
+      {
+        "feature": "Covariance",
+        "importance": 0.815498
+      },
+      {
+        "feature": "Max",
+        "importance": 0.683832
+      }
+    ],
+    "rf": [
+      {
+        "feature": "Min",
+        "importance": 0.228759
+      },
+      {
+        "feature": "AVG",
+        "importance": 0.178949
+      },
+      {
+        "feature": "Tot size",
+        "importance": 0.156723
+      },
+      {
+        "feature": "Protocol Type",
+        "importance": 0.12087
+      },
+      {
+        "feature": "Tot sum",
+        "importance": 0.078472
+      },
+      {
+        "feature": "ICMP",
+        "importance": 0.071278
+      },
+      {
+        "feature": "Max",
+        "importance": 0.069623
+      },
+      {
+        "feature": "Header_Length",
+        "importance": 0.034641
+      },
+      {
+        "feature": "TCP",
+        "importance": 0.02597
+      },
+      {
+        "feature": "UDP",
+        "importance": 0.010557
+      }
+    ],
+    "xgb": [
+      {
+        "feature": "Min",
+        "importance": 0.973233
+      },
+      {
+        "feature": "ICMP",
+        "importance": 0.017095
+      },
+      {
+        "feature": "Variance",
+        "importance": 0.001761
+      },
+      {
+        "feature": "rst_count",
+        "importance": 0.001718
+      },
+      {
+        "feature": "Number",
+        "importance": 0.001211
+      },
+      {
+        "feature": "HTTPS",
+        "importance": 0.000983
+      },
+      {
+        "feature": "Protocol Type",
+        "importance": 0.000821
+      },
+      {
+        "feature": "UDP",
+        "importance": 0.000577
+      },
+      {
+        "feature": "Tot size",
+        "importance": 0.000425
+      },
+      {
+        "feature": "TCP",
+        "importance": 0.000401
+      }
+    ],
+    "lgbm": [
+      {
+        "feature": "Rate",
+        "importance": 1330
+      },
+      {
+        "feature": "Protocol Type",
+        "importance": 1257
+      },
+      {
+        "feature": "flow_duration",
+        "importance": 1125
+      },
+      {
+        "feature": "Duration",
+        "importance": 961
+      },
+      {
+        "feature": "Min",
+        "importance": 926
+      },
+      {
+        "feature": "Header_Length",
+        "importance": 843
+      },
+      {
+        "feature": "Variance",
+        "importance": 839
+      },
+      {
+        "feature": "Tot size",
+        "importance": 669
+      },
+      {
+        "feature": "urg_count",
+        "importance": 659
+      },
+      {
+        "feature": "syn_count",
+        "importance": 641
+      }
+    ]
+  }
+}

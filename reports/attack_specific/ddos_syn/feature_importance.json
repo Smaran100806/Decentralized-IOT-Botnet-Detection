@@ -1,0 +1,94 @@
+[
+  {
+    "feature": "syn_flag_number",
+    "importance": 0.322121
+  },
+  {
+    "feature": "syn_count",
+    "importance": 0.318415
+  },
+  {
+    "feature": "TCP",
+    "importance": 0.054948
+  },
+  {
+    "feature": "Tot sum",
+    "importance": 0.037091
+  },
+  {
+    "feature": "Min",
+    "importance": 0.029367
+  },
+  {
+    "feature": "Tot size",
+    "importance": 0.027497
+  },
+  {
+    "feature": "flow_duration",
+    "importance": 0.027183
+  },
+  {
+    "feature": "Header_Length",
+    "importance": 0.025069
+  },
+  {
+    "feature": "urg_count",
+    "importance": 0.024571
+  },
+  {
+    "feature": "Rate",
+    "importance": 0.023169
+  },
+  {
+    "feature": "AVG",
+    "importance": 0.022668
+  },
+  {
+    "feature": "rst_count",
+    "importance": 0.02213
+  },
+  {
+    "feature": "fin_flag_number",
+    "importance": 0.016969
+  },
+  {
+    "feature": "Max",
+    "importance": 0.01576
+  },
+  {
+    "feature": "psh_flag_number",
+    "importance": 0.008163
+  },
+  {
+    "feature": "ack_flag_number",
+    "importance": 0.007508
+  },
+  {
+    "feature": "UDP",
+    "importance": 0.005372
+  },
+  {
+    "feature": "Variance",
+    "importance": 0.003121
+  },
+  {
+    "feature": "Covariance",
+    "importance": 0.002836
+  },
+  {
+    "feature": "ICMP",
+    "importance": 0.002204
+  },
+  {
+    "feature": "Number",
+    "importance": 0.001908
+  },
+  {
+    "feature": "Duration",
+    "importance": 0.001691
+  },
+  {
+    "feature": "HTTPS",
+    "importance": 0.000239
+  }
+]

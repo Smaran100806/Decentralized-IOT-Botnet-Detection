@@ -1,0 +1,30 @@
+{
+  "attacks_trained": [
+    "ddos_icmp",
+    "ddos_syn",
+    "mirai_greeth"
+  ],
+  "summary": {
+    "ddos_icmp": {
+      "best_model": "rf",
+      "best_f1": 0.9994832836772611,
+      "best_roc": 0.9999936720275993,
+      "best_acc": 0.9998402516546274,
+      "features": 22
+    },
+    "ddos_syn": {
+      "best_model": "rf",
+      "best_f1": 0.9196519190693819,
+      "best_roc": 0.9924947204380721,
+      "best_acc": 0.9772630519921384,
+      "features": 23
+    },
+    "mirai_greeth": {
+      "best_model": "lgbm",
+      "best_f1": 0.9752049865308611,
+      "best_roc": 0.9999766447988834,
+      "best_acc": 0.9989284964706662,
+      "features": 22
+    }
+  }
+}

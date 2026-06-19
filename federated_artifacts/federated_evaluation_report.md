@@ -1,6 +1,5 @@
 # Federated Model Evaluation Report
 
-> **Task E5 - Team Member 3**
 > Final evaluation of the federated global model on the **frozen test set**.
 
 ---
@@ -78,4 +77,4 @@ print(f"  ROC-AUC  : {report['roc_auc']:.4f}")
 ```
 
 ---
-*Generated automatically by `federated_evaluation.py` - Team Member 3.*
+*Generated automatically by `federated_evaluation.py`.*

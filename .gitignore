@@ -35,10 +35,16 @@ htmlcov/
 ENV/
 *.secret
 *.key
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+ehthumbs.db
 
 #  Data & Large Files 
 CICIOT23/
 *.csv
+ciciot2023_attack_features.html
 
 # Whitelist small metadata in processed data
 processed_ciciot23/*
@@ -53,8 +59,6 @@ processed_ciciot23/*
 *.onnx
 *.pb
 *.tflite
-
-scripts/
 
 models/*
 !models/*.json
@@ -72,6 +76,9 @@ graph_artifacts/*
 !graph_artifacts/*.json
 !graph_artifacts/*.md
 !graph_artifacts/*.pkl
+
+# Dashboard bundle is regenerated from scripts/generate_dashboard_data.py
+dashboard/data/*.json
 
 #  Reports & Documentation 
 # (Intentionally tracking all files in reports/ and notebooks/)
